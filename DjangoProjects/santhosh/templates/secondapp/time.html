@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table,
+    td,
+    th {
+        border: 1px solid black;
+    }
+
+    table{
+        border-collapse: collapse;
+        border-spacing: 10px;
+    }
+
+    
+</style>
+<body>
+    <table >
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phone Num</th>
+
+    </tr>
+    {% for item in vary %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.phone}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

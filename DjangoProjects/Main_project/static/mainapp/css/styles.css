@@ -1,0 +1,117 @@
+body{
+    background-image:linear-gradient(to bottom left,green,black);
+    background-repeat: no-repeat;
+    height: 200vh;
+    }
+.all-top-1{
+    margin-left:50px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px; 
+}
+.all-top-1 h1{
+    font-size: 40px;
+}
+hr{
+    background-color: white;
+}
+
+.mid-container{
+    background-color: azure;
+    margin: 10% auto;
+    width: 70%;
+    border-radius: 20px;
+}
+.form-mid-container p{
+    font-size: 30px;
+    margin-left: 10px;
+}
+.form-mid-container{
+    padding: 50px 65px;
+}
+.form-group{
+    padding: 10px 60px;
+}
+.form-check-label {
+    font-size: 30px;
+    position: relative;
+    bottom: 14px;
+    padding: 0;
+    margin: 0;
+}
+.submit_button{
+    position: absolute;
+    right: 30%;
+}
+#demo {
+    color: black;
+    position: absolute;
+    right: 10%;
+    font-size: 20px;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.mid-container-signin{
+    background-color: azure;
+    margin: 10% auto;
+    width: 50%;
+    border-radius: 20px;
+    padding: 25px 0;
+    
+}
+.mid-container-signin-1{
+    background-color: azure;
+    margin: 10% auto;
+    width: 50%;
+    border-radius: 20px;
+    padding: 25px 0;
+    
+}
+
+.signin_label{
+    text-align: center;
+    padding: 20px  0;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+.submit_signin button{
+    position: relative;
+    left: 20%;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    width: 60%;
+}
+.container-signin{
+    margin: 100px 100px;
+}
+.std strong {
+    font-weight: bolder;
+    color:coral;
+}
+.answer-button-r{
+    position: relative;
+    right: -45%;
+    margin-bottom: 40px;
+    width: 150px;
+}
+.answer-button-l{
+    position: relative;
+    left: 10%;
+    margin-bottom: 40px;
+    width: 150px;
+}
+pre h5{    
+    
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.alert-1{
+    width: 70%;
+    text-align: center;
+    margin-left: 70px;
+}

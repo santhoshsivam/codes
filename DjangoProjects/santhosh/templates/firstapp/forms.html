@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+
+</head>
+<body>
+    {% if send %}
+    <form method="POST">
+    {{send.as_p }}}
+    {% csrf_token %}
+    <input type="submit" action = "/form_index/" value="send">
+    </form>
+    {% elif send_2 %}
+        <table>
+            <tr>
+            <th>Name</th>
+            <th>Full Name</th>
+            <th>Password</th>
+            <th>Phone Number</th>
+            </tr>
+            {% for i in send_2 %}
+            <tr>
+
+                <td>{{ i.uname }} </td>
+                <td>{{ i.fname }}</td>
+                <td>{{ i.password }}</td>
+                <td>{{ i.phone }}</td>
+            </tr>
+            {% endfor%}
+
+
+
+        </table>
+
+
+        {% endif %}
+
+
+</body>
+</html>
